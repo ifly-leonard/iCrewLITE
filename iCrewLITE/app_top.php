@@ -1,6 +1,4 @@
-<?php
-/*include('page_preloader.php');*/
-?>
+
     <!-- Overlay For Sidebars -->
     <div class="overlay"></div>
     <!-- #END# Overlay For Sidebars -->
