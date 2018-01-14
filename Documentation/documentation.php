@@ -131,6 +131,7 @@
 
 						<h3 id="chekclist" class="section-title">Installation Checklist</h3>
 						<div class="section-content">
+
 							<ol>
 									<li>Make sure you have the latest stable phpVMS, Version v5.5.2+ </li>
 									<li>Make sure you have downloaded the latest version of iCrew LITE</li>
@@ -143,6 +144,7 @@
 									<li>Unzip the iCrew LITE package and paste it into public_html/(folder_name)/lib/skins</li>
 									<li>Go to your admin panel and change the skin to iCrew LITE</li>
 							</ol>
+							<a href="./install.php" class="button">Open Installer</a><br><br>
 							<em><p>EXPERIMENTAL : In step 7, Upload the phpVMS installer to your main domain and when the installer asks you to verify the domain (SITE_URL), enter your subdomain. (or) Continue using the normal method and once you're done with the installation, replace the common, modules and templates folders from your previous domain. </p></em>
 							<p>
 									Your Crew center is successfully installed, but not yet configured. So you are likely it would either keep loading or show some error. Don't panic, just continue with the configuration.
@@ -334,7 +336,7 @@
 			<div class="text-center">
 				<a href="https://www.paypal.me/ICSAnsbert/5" target="_blank" class="intro__video">I want to get you coffee</a>
 				<a href="mailto:kashrayks@gmail.com?Subject=I%20Want%20to%20hire%20you" target="_blank" class="button">I want to hire you</a>
-				<a href="https://www.paypal.me/ICSAnsbert/5" target="_blank" class="button">I can't do both, but i can give you a thumbs up</a>
+				<a href="https://forum.phpvms.net/topic/25363-free-icrew-lite-responsive-bootstrap-crew-center-for-phpvms-2018/" target="_blank" class="button">I can't do both, but i can give you a thumbs up</a>
 			</div>
 		</div>
 	</section><!-- section END -->

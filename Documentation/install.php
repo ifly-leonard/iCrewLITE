@@ -12,7 +12,7 @@
     else
     {
     include_once '../core/codon.config.php';
-if(Auth::LoggedIn())
+    if(Auth::LoggedIn())
             {
                     if(PilotGroups::group_has_perm(Auth::$usergroups, ACCESS_ADMIN))
                     {
@@ -183,7 +183,7 @@ if(Auth::LoggedIn())
         closedir($dir);
         echo 'Closing Directory';
     }
-     recurse_copy('../Documentation/iCrewLITE', '../lib/skins/iCrewLITE/');
+     recurse_copy('../iCrewLITE', '../lib/skins/iCrewLITE/');
             flush();sleep(1);
 
             if(!file_exists('../lib/skins/iCrewLITE'))
@@ -201,7 +201,7 @@ if(Auth::LoggedIn())
             if(!file_exists('../lib/skins/iCrewLITE'))
             {
                 @mkdir('../lib/skins/iCrewLITE/inssts');
-				echo 'Directory "inssts" created<br>';
+								echo 'Directory "inssts" created<br>';
                 sleep(1);
                 echo 'Copying Contents...<font color="#32CD32">DONE</font><br /><br />';
             }
