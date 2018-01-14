@@ -142,7 +142,7 @@
 									<li>Fill in the necessary details and install normally.</li>
 									<li>Unzip the iCrew LITE package and paste it into public_html/(folder_name)/lib/skins</li>
 									<li>Go to your admin panel and change the skin to iCrew LITE</li>
-							</ol>							
+							</ol>
 							<em><p>EXPERIMENTAL : In step 7, Upload the phpVMS installer to your main domain and when the installer asks you to verify the domain (SITE_URL), enter your subdomain. (or) Continue using the normal method and once you're done with the installation, replace the common, modules and templates folders from your previous domain. </p></em>
 							<p>
 									Your Crew center is successfully installed, but not yet configured. So you are likely it would either keep loading or show some error. Don't panic, just continue with the configuration.
@@ -258,10 +258,10 @@
 						<h2 class="section-head">How things work</h2>
 						<div class="section-content">
 							<p> Well, mostly I've made sure everything is dynamic, which means you don't have to change / monitor anything, but there are few stuff which you need to tweak in order to make sure everything works perfectly.
-								<br> To begin with, the Staff Page needs a little work with the SQL Database, nothing much, you just need to run a command and there after add an entries.
+								<br> To begin with, the Staff Page needs a little work with the SQL Database, nothing much, you just need to run a command and there after add few entries.
 									<br> Open your phpMyAdmin and run this SQL Command.
 								<pre><code>ALTER TABLE  `phpvms_pilots` ADD  `staff` INT NULL DEFAULT NULL AFTER  `ranklevel` ;</code></pre>
-								So, now you can see you've added a new filed called "staff", if the pilot is staff in your VA, enter "1" else it'll be "0" by default and in the "Admin Comments" add the persons's respective designation.<br><br>
+								So, now you can see you've added a new feild called "staff", if the pilot is staff in your VA, enter "1" else it'll be "0" by default and in the "Admin Comments" add the persons's respective designation.<br><br>
 
 								Next, open <strong>core > common > StatsData.class.php </strong> and after line '556' add the following <br>
 								<pre><code>public static function TodayHours() { <br>return self::getTotalForCol(array('table' => 'pireps','column' => '*',<br>'where' => array('DATE(`submitdate`) = CURDATE()'),'func' => 'SUM'));<br> }</code>
