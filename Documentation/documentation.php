@@ -126,7 +126,7 @@
 
 						<h3 id="sec21" class="section-title">Overview</h3>
 						<div class="section-content">
-							<p>Installing iCrew LITE into your website is really simple. All you need to do is, to make sure you follow the check list and do exactly what it says ;)</p>
+							<p>[UPDATED ON 19.02.2018] Installing iCrew LITE into your website is really simple. All you need to do is, to make sure you follow the check list and do exactly what it says ;)</p>
 						</div>
 
 						<h3 id="chekclist" class="section-title">Installation Checklist</h3>
@@ -137,17 +137,18 @@
 									<li>Make sure you have downloaded the latest version of iCrew LITE</li>
 									<li>If you already use Mark Swan's CrewCenter, you can skip to Item #9</li>
 									<li>Create a new sub domain, go to your <strong>cpanel > Domains > Add Sub Domain</strong> and create a new subomain. Examples : "crew.yoursite.com", "waterside.bavirtual.com", "icrew.delta-virtual.com". <em>Geddit ?</em> </li>
-									<li>Go to your local.config.php and take a note of your database detials and also, Take a backup of your entire database. (Just in case)</li>
-									<li>Upload the latest version of phpVMS on that subdomain via your filemanager or FTP</li>
-									<li>Now open that subdomain and run the update.php</li>
-									<li>Fill in the necessary details and install normally.</li>
-									<li>Unzip the iCrew LITE package and paste it into public_html/(folder_name)/lib/skins</li>
+									<li>Go to your local.config.php and take a note of your database details and also, Take a backup of your entire database. (Just in case, and this can by done via cPanel too)</li>
+									<li>Upload the latest version of phpVMS (which is phpVMS 5.5.2) on that subdomain's folder via your filemanager or FTP</li>
+									<li>Now open that subdomain and run the <b>update.php</b> provided with the phpVMS</li>
+									<li>Fill in the necessary details like the URL etc, the part where it asks about your Database details, put the stuff you copied earlier from your local.config.php (Item #5) and install normally. </li>
+									<li>Now, you have phpVMS successfully running on a subdomain with all of your existing data from previous database. Check for all crucial details like your Pilots, Schedules, PIREPS, Total VA Hours etc.</li>
+									<li>Unzip the iCrew LITE package and paste it into public_html/(subdomain_folder_name)/lib/skins</li>
 									<li>Go to your admin panel and change the skin to iCrew LITE</li>
 							</ol>
 							<a href="./install.php" class="button">Open Installer</a><br><br>
 							<em><p>EXPERIMENTAL : In step 7, Upload the phpVMS installer to your main domain and when the installer asks you to verify the domain (SITE_URL), enter your subdomain. (or) Continue using the normal method and once you're done with the installation, replace the common, modules and templates folders from your previous domain. </p></em>
 							<p>
-									Your Crew center is successfully installed, but not yet configured. So you are likely it would either keep loading or show some error. Don't panic, just continue with the configuration.
+									Your Crew center is successfully installed, but not yet configured. So you are likely it would either keep loading with the preloader or show some error. Don't panic, just continue with the configuration.
 							</p>
 						</div>
 
@@ -156,7 +157,7 @@
 						<h3 id="config" class="section-title">Configuration</h3>
 						<div class="section-content">
 							Configuring iCrew LITE is very easy, I've tried my best to do it all from one place.<br><br>
-							Go to <strong>core > local.config.php </strong> and add these lines above <code># Page encoding options</code> <br><br>
+							Go to <strong>sub_domain_folder > core > local.config.php </strong> and add these lines above <code># Page encoding options</code> <br><br>
 							<code>
 								/*iCrew LITE Configuration lines */<br>
 								define('CREWCENTER_TITLE', 'Demo<strong>Crew</strong>'); <br>
@@ -164,10 +165,10 @@
 								define('GMAPS_API', 'asIlxuYoUrGooGlEMaPskEyGoeSherexsur');
 							</code><br><br>
 
-							Now, in the place of DemoCrew you can put in a suitable name for your VA, like BluCrew, iCrew, DeltaCrew, RedCrew etc.
+							> Now, in the place of DemoCrew you can put in a suitable name for your VA, like BluCrew, iCrew, DeltaCrew, RedCrew etc.
 							If nothing is desirable, then use your VA's name itself. <br>
-							Now, for your the VA Tagline, use your "real world airline's tagline", for example for British Airways, it would be "To fly, To Serve".
-							In the GMAPS_API, paste your Google maps API Key.
+							> Now, for your the VA Tagline, use your "real world airline's tagline", for example for British Airways, it would be "To fly, To Serve". <br>
+							> In the GMAPS_API, paste your Google maps API Key.
 						</div>
 
 						<div class="space"></div>
@@ -274,6 +275,11 @@
 						Now this is something which one of my friends recommended me to add. The module is extremely simple, no complex code at all. Which makes it almost a 'manual' module. <br>
 						When you want to add a new Focus Airport, simply go the <strong>focusairport</strong> folder in <Strong>lib > skins > iCrewLITE </strong> and change the 'ICAO Code' and the 'Image'. As default, I've added 'OMDB' to be the Focus Airport.<br>
 						Here's a Tip, (this is completely my opinion) use pictures which have tags like '#silhouette, #sunset' of famous monuments of the Airport's City. For example, i came up with this picture when I searched for 'Dubai skyline sunset silhouette'.
+
+						<br>
+						<strong><h3>The Ranks Module</h3> </strong>
+						<br>
+							That's pretty simple, you can find the required files at the folder called 'Modules' with this installer. Paste that folder under your core > modules and it's done. Please note that it will NOT work as intended if you donot have pictures which depict your VA's respective rankings.
 						</div>
 
 						<strong><h3 id="cuz">Cuztomization</h3> </strong>
@@ -347,7 +353,7 @@
 			<br><br>
 			<div class="socials">
 				<a href="https://www.facebook.com/icrewsystems" target="_blank"><i class="socicon-facebook"></i></a>
-				<a href="https://www.facebook.com/icrewsystems" target="_blank"><i class="socicon-github"></i></a>
+				<a href="https://github.com/iCrewSystems/" target="_blank"><i class="socicon-github"></i></a>
 			</div>
 		</footer>
 
