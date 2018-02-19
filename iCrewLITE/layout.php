@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>iCrew | <?php echo SITE_NAME?></title>
-    
+    <title>iCrewLITE | <?php echo SITE_NAME?></title>
+
     <!-- Favicon-->
     <link rel="icon" href="http://jet.iflyva.in/lib/skins/iCrewLITE/images/favicon.png" type="image/x-icon">
 
@@ -32,65 +32,65 @@
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="<?php echo SITE_URL?>/lib/skins/iCrewLITE/css/themes/all-themes.css" rel="stylesheet" />
-    
+
     <!--WaitMe Css-->
     <link href="<?php echo SITE_URL?>/lib/skins/iCrewLITE/plugins/waitme/waitMe.css" rel="stylesheet" />
     <link href="<?php echo SITE_URL?>/lib/skins/iCrewLITE/plugins/waitme/waitMe.min.css" rel="stylesheet" />
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
-    
+
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
-    
+
     <!-- (Optional) Latest compiled and minified JavaScript translation files -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
-    
+
     <!--Your Google Maps API Key here-->
     <script src="http://maps.google.com/maps/api/js?v=3&libraries=geometry&language=en_gr&key=AIzaSyDbwylblt3-Nz21yNoDJWbHyqTjTNogYcg" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js" type="text/javascript"></script>
-		
+
 		<?php
       Template::Show('core_htmlhead.tpl');
     ?>
-    
+
     </head>
-    <?php if(!Auth::LoggedIn()) 
+    <?php if(!Auth::LoggedIn())
     {
       ?>
-      
+
       <body class="login-page">
         <?php echo $page_content; ?>
       </body>
-      <?php 
-    } 
-      
-      else 
-      
+      <?php
+    }
+
+      else
+
     {
     ?>
-    <body class="theme-indigo"> 
-    	
+    <body class="theme-indigo">
+
     	<?php echo $page_htmlreq; ?>
 		<?php
 		// var_dump($_SERVER['REQUEST_URI']);
 		# Hide the header if the page is not the registration or login page
 		# Bit hacky, don't like doing it this way
-		
+
 		if (!isset($_SERVER['REQUEST_URI']) || ltrim($_SERVER['REQUEST_URI'],'/') !== SITE_URL.'/index.php/login' || ltrim($_SERVER['REQUEST_URI'],'/') !== SITE_URL.'/index.php/registration') {
 			if(Auth::LoggedIn()) {
 			  Template::Show('page_preloader.php');
 				Template::Show('app_top.php');
-				Template::Show('app_sidebar.php'); 
+				Template::Show('app_sidebar.php');
 			}
 		}
 		?>
-        
+
          <section class="content">
           <div class="container-fluid">
             <?php echo $page_content; ?>
           </div>
         </section>
-        
+
 		<?php
 		# Hide the footer if the page is not the registration or login page
 		# Bit hacky, don't like doing it this way
@@ -101,10 +101,10 @@
 		}
     }
 		?>
-		
-    	
+
+
      <!-- Jquery Core Js -->
-    
+
 
     <!-- Bootstrap Core Js -->
     <script src="<?php echo SITE_URL?>/lib/skins/iCrewLITE/plugins/bootstrap/js/bootstrap.js"></script>
@@ -137,7 +137,7 @@
 
     <!-- Sparkline Chart Plugin Js -->
     <script src="<?php echo SITE_URL?>/lib/skins/iCrewLITE/plugins/jquery-sparkline/jquery.sparkline.js"></script>
-    
+
     <!-- Slimscroll Plugin Js -->
     <script src="<?php echo SITE_URL?>/lib/skins/iCrewLITE/plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
 
@@ -149,7 +149,7 @@
 
     <script src="<?php echo SITE_URL?>/lib/skins/iCrewLITE/plugins/waitme/waitMe.js"></script>
     <script src="<?php echo SITE_URL?>/lib/skins/iCrewLITE/plugins/waitme/waitMe.min.js"></script>
-    
+
     <!-- Custom Js -->
     <script src="<?php echo SITE_URL?>/lib/skins/iCrewLITE/js/admin.js"></script>
     <script src="<?php echo SITE_URL?>/lib/skins/iCrewLITE/js/pages/index.js"></script>
@@ -158,5 +158,3 @@
 </body>
 
 </html>
-
-      
