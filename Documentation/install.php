@@ -6,7 +6,7 @@
 
     if(!file_exists('../core/codon.config.php'))
             {
-                echo '<hr /><h4><font color="#FF0000">It Does Not Appear That The Flightboard Installer Has Been Placed In The phpVMS Application Root</font></h4>
+                echo '<hr /><h4><font color="#FF0000">It Does Not Appear That The iCrewLITE Installer Has Been Placed In The phpVMS Application Root</font></h4>
                 <a href="./index.php">Check For Proper Location Again<br /><br /></a><hr />';
             }
     else
