@@ -285,7 +285,7 @@
 						<strong><h3 id="cuz">Cuztomization</h3> </strong>
 						<br>
 							As default, the Crew Center comes with the 'Indigo' theme color, however you have 16+ Theme colors to choose from. The list of the colors are given below, <br>
-							<img src="assets/img/colors.png" height="450" width="auto" />
+							<img src="https://raw.githubusercontent.com/iCrewSystems/iCrewLITE/master/Documentation/assets/img/colors.PNG" height="450" width="auto" />
 							To change your theme, just simply go to <strong> lib > skins > iCrewLITE > layout.php </strong> and on line '79' <code>theme-indigo</code> change the "indigo" to your desired theme.<br><br>
 
 							For your login background screen, for this release, you have to change it in each of the login_xyz.php and registration_xyz.php in the <code>style</code> tag.
