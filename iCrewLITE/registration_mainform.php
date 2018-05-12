@@ -1,11 +1,23 @@
 <style>
+  /* Hey there VA Admin!
+    So if you're looking at this, it's probally because you got annoyed that you were not able to process registrations
+    because of the reCaptcha error. I've clearly mentioned about this on the documentation, but It's alright, the fix is really simple.
+      1. The immediate solution to this would be to remove the reCaptcha part from this form, but that's
+        very very risky because there can be bots which can try to hijack with fake accounts.
+
+      2. The traditonal way to get rid of this reCaptcha Error is to go to,
+          core > app.config.php and pasting your reCaptcha Public and private keys at
+          Config::Set('RECAPTCHA_PUBLIC_KEY', '---THE KEY GOES HERE---');
+          Config::Set('RECAPTCHA_PRIVATE_KEY', '---THE KEY GOES HERE---');
+
+    
+
+ */
         body {
           background: url(http://jet.iflyva.in/iCrew/backgrounds/b777.jpg);
           background-repeat: no-repeat;
           background-size: 100%;
         }
-
-
 </style>
      <div class="login-box">
         <div class="logo">

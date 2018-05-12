@@ -96,13 +96,14 @@
                             <span>Gallery</span>
                         </a>
                     </li>
-                    
+
                 </ul>
             </div>
             <!-- #Menu -->
             <!-- Footer -->
             <div class="legal">
                 <div class="copyright">
+                  <!-- According to the policy of phpVMS you should NOT remeove this -->
                     <?php echo SITE_NAME?> &copy; <?php echo date("Y"); ?><br>
                     powered by <a href="www.phpvms.net">phpVMS</a><br>
                 </div>
@@ -126,17 +127,17 @@
                               $usersonline = StatsData::UsersOnline();
                               $guestsonline = StatsData::GuestsOnline();
                             ?>
-                                <h5><?php      
+                                <h5><?php
                                     $shown = array();
-                                    foreach($usersonline as $pilot) 
-                                    { 
+                                    foreach($usersonline as $pilot)
+                                    {
                                     if(in_array($pilot->pilotid, $shown))
                                     continue;
                                     else
-                                    $shown[] = $pilot->pilotid; 
+                                    $shown[] = $pilot->pilotid;
                                     echo "<p>";
                                     echo '<img src="'.SITE_URL.'/lib/skins/iCrewLITE/images/online.png" alt="avatar" style="width: 10px;" /> &nbsp; ';
-                                    echo $pilot->firstname.' '.$pilot->lastname.'<br />'; 
+                                    echo $pilot->firstname.' '.$pilot->lastname.'<br />';
                                     echo "</p>";
                                     }
                                     ?>
@@ -148,7 +149,7 @@
                             <li>
                                <a target="_blank" href="http://webeye.ivao.aero" class="btn btn-info waves-effect">WebEye LIVE</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                <a target="_blank" href="https://vatmap.jsound.org" class="btn btn-info waves-effect">VatMap LIVE</a>
-                               
+
                             </li>
                         </ul>
                     </div>

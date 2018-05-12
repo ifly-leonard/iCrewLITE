@@ -1,16 +1,17 @@
 <style>
+      /* Hey there Admin, If you would like to change your Login Screen background, change the link down below */
         body {
           background: url(http://jet.iflyva.in/iCrew/backgrounds/b777.jpg);
           background-repeat: no-repeat;
           background-size: 100%;
         }
-        
-        
+
+
 </style>
      <div class="login-box">
         <div class="logo">
             <a href="javascript:void(0);"><?php echo CREWCENTER_TITLE ?></a>
-            
+
         </div>
         <?php
         if(isset($message))
@@ -62,10 +63,10 @@
                     </div>
                 </form>
             </div>
-            
+
         </div>
     </div>
-    
+
     <!-- Jquery Core Js -->
     <script src="<?php echo SITE_URL?>/lib/skins/iCrewLITE/plugins/jquery/jquery.min.js"></script>
 
