@@ -1,18 +1,4 @@
 <style>
-  /* Hey there VA Admin!
-    So if you're looking at this, it's probally because you got annoyed that you were not able to process registrations
-    because of the reCaptcha error. I've clearly mentioned about this on the documentation, but It's alright, the fix is really simple.
-      1. The immediate solution to this would be to remove the reCaptcha part from this form, but that's
-        very very risky because there can be bots which can try to hijack with fake accounts.
-
-      2. The traditonal way to get rid of this reCaptcha Error is to go to,
-          core > app.config.php and pasting your reCaptcha Public and private keys at
-          Config::Set('RECAPTCHA_PUBLIC_KEY', '---THE KEY GOES HERE---');
-          Config::Set('RECAPTCHA_PRIVATE_KEY', '---THE KEY GOES HERE---');
-
-    
-
- */
         body {
           background: url(http://jet.iflyva.in/iCrew/backgrounds/b777.jpg);
           background-repeat: no-repeat;
@@ -31,6 +17,7 @@
         ?>
         <div class="card">
             <div class="body">
+              <h3 class="text-center">Registration</h3>
               <form action="<?php echo url('/registration');?>" method="post">
                   <div class="form-group">
                       <input type="text" name="firstname" class="form-control" value="<?php echo Vars::POST('firstname');?>" placeholder="First Name">
@@ -72,7 +59,6 @@
                                   $sel = 'selected="selected"';
                               else
                                   $sel = '';
-
                                   echo '<option value="'.$countryCode.'" '.$sel.'>'.$countryName.'</option>';
                               }
                           ?>
@@ -104,16 +90,15 @@
                   </div>
 
                   <?php
-
                       //Put this in a seperate template. Shows the Custom Fields for registration
                       Template::Show('registration_customfields.tpl');
-
                   ?>
 
                   <div class="form-group">
-                      <?php
-                          echo recaptcha_get_html(Config::Get('RECAPTCHA_PUBLIC_KEY'), $captcha_error);
-                      ?>
+                    <?php if(isset($captcha_error)){echo '<p class="error">'.$captcha_error.'</p>';} ?>
+                    <div class="g-recaptcha" data-sitekey="<?php echo Config::Get('RECAPTCHA_PUBLIC_KEY');?>"></div>
+                    <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?hl=<?php echo $lang;?>">
+                    </script>
                   </div>
                   <div class="row">
                       <div class="col-xs-8">

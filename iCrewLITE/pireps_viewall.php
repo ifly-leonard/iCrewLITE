@@ -15,7 +15,7 @@
             <div class="box box-primary">
                 <div class="box-body table-responsive">
                     <p><?php if(isset($descrip)) { echo $descrip; }?></p>
-                    
+
                     <?php
                         if(!$pireps)
                         {
@@ -54,7 +54,7 @@
                             ?>
                             <tr>
                                 <td align="center">
-                                    <a href="<?php echo url('/pireps/view/'.$report->pirepid);?>"><?php echo $report->code . $report->flightnum; ?></a>
+                                    <a class="btn btn-mutud waves-effect btn-sm" href="<?php echo url('/pireps/view/'.$report->pirepid);?>"><?php echo $report->code . $report->flightnum; ?></a>
                                 </td>
                                 <td align="center">
                                     <?php echo $report->depicao; ?>
@@ -77,11 +77,11 @@
                                     if($report->accepted == PIREP_ACCEPTED)
                                         echo '<div id="success" class="label label-success">Accepted</div>';
                                     elseif($report->accepted == PIREP_REJECTED)
-                                        echo '<div id="error" class="label label-danger">Rejected</div>';
+                                        echo '<div class="label label-danger">Rejected</div>';
                                     elseif($report->accepted == PIREP_PENDING)
-                                        echo '<div id="error" class="label label-info">Approval Pending</div>';
+                                        echo '<div class="label label-info">Approval Pending</div>';
                                     elseif($report->accepted == PIREP_INPROGRESS)
-                                        echo '<div id="error" class="label label-warning">Flight in Progress</div>';
+                                        echo '<div class="label label-warning">Flight in Progress</div>';
 
                                     ?>
                                 </td>
@@ -92,9 +92,8 @@
                                 {
                                     ?>
                                 <td align="right">
-                                    <a href="<?php echo url('/pireps/addcomment?id='.$report->pirepid);?>">Add Comment</a>
-                                    <span> | </span>
-                                    <a href="<?php echo url('/pireps/editpirep?id='.$report->pirepid);?>">Edit PIREP</a>
+                                    <a class="btn btn-info" href="<?php echo url('/pireps/addcomment?id='.$report->pirepid);?>">Add Comment</a>
+                                    <a class="btn btn-danger" href="<?php echo url('/pireps/editpirep?id='.$report->pirepid);?>">Edit PIREP</a>
                                 </td>
                                 <?php
                                 }

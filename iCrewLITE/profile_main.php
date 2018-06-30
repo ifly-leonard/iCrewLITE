@@ -1,7 +1,7 @@
             <div class="block-header">
               <!--You can edit this to display any kind of welcome message to your Pilots-->
                 <p class="alert alert-danger">
-                  Hello <?php echo Auth::$userinfo->firstname; ?>, Welcome back to <?php echo SITE_NAME?> 
+                  Hello <?php echo Auth::$userinfo->firstname; ?>, Welcome back to <?php echo SITE_NAME?>
                 </p>
             </div>
 
@@ -35,8 +35,12 @@
                             <i class="material-icons">timelapse</i>
                         </div>
                         <div class="content">
+                          <?php $totalhours = StatsData::TotalHours();
+                              $th_split = str_split($totalhours);
+                              $totalhours = $th_split[1];
+                            ?>
                             <div class="text">Total Hours</div>
-                            <div class="number count-to" data-from="0" data-to="<?php echo StatsData::TotalHours(); ?>" data-speed="1000" data-fresh-interval="20"></div>
+                            <div class="number count-to" data-from="0" data-to="<?php echo $totalhours; ?>" data-speed="1000" data-fresh-interval="20"></div>
                         </div>
                     </div>
                 </div>
@@ -52,6 +56,7 @@
                     </div>
                 </div>
             </div>
+
             <!-- #END# Widgets -->
                   <script>
                     function reload() {
@@ -86,9 +91,9 @@
                 </div>
             </div>
             <!-- #END# ACARS Map -->
-            
+
             <div class="row clearfix">
-                
+
                 <!-- VA News -->
                 <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
                     <div class="card">
@@ -127,13 +132,16 @@
                                 <li>
                                     v2.0 - Public release
                                 </li>
+                                <li>
+                                    v2.1 - Fixed various bugs, added privacy policy
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <!-- #END# CrewCenter Updates -->
             </div>
-            
+
             <div class="row clearfix">
                  <!-- Focus Airport -->
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -149,4 +157,3 @@
                     </div>
                 </div>
             </div>
-        

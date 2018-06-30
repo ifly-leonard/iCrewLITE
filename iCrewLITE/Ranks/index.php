@@ -1,4 +1,5 @@
-<?php $ranks = RanksData::getAllRanks(); ?>
+<?php $ranks = RanksData::getAllRanks();
+?>
 <div class="row">
 	<div class="col-md-12">
 		<div class="card">
@@ -39,7 +40,7 @@ foreach($ranks as $rank)
       	</table>
 			</div>
 			</div>
-
+      	
 		</div>
 	</div>
 </div>

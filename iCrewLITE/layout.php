@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>iCrewLITE | <?php echo SITE_NAME?></title>
+    <title>iCrew | <?php echo SITE_NAME?></title>
 
     <!-- Favicon-->
     <link rel="icon" href="http://jet.iflyva.in/lib/skins/iCrewLITE/images/favicon.png" type="image/x-icon">
@@ -101,7 +101,7 @@
 		}
     }
 		?>
-
+		
 
      <!-- Jquery Core Js -->
 

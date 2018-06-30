@@ -1,44 +1,33 @@
-<style>
-        body {
-          background: url(http://jet.iflyva.in/iCrew/backgrounds/b777.jpg);
-          background-repeat: no-repeat;
-          background-size: 100%;
-        }
-
-
-</style>
-     <div class="login-box">
-        <div class="logo">
-            <a href="javascript:void(0);"><?php echo CREWCENTER_TITLE ?></a>
-
+<body class="hold-transition login-page" style="background-color: #222222;">
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="" style="color: white;">Crew<b>Center</b></a>
         </div>
-        <?php
-        if(isset($message))
-            echo '<div class="alert alert-danger">
-            <h4><i class="icon fa fa-exclamation-triangle"></i> Error</h4> '.$message.'</div>';
-        ?>
-        <div class="card">
-            <div class="body">
-              <div class="alert alert-success">
-                Success, your registration was filed. Our Staff will moderate your application soon. This process may take upto 48 hours.
-              </div>
+        <!-- /.login-logo -->
+
+        <div class="login-box-body">
+            <div class="alert alert-success">
+                <h4><i class="icon fa fa-check"></i> Confirmation Sent</h4>
+                Thanks for registering for <?php echo SITE_NAME; ?>. You will be notified via email of your registration status.
             </div>
-
+            
+            <center style="margin-top: 30px;">
+                <p class="text-muted">CrewCenter by Mark Swan</p>
+            </center>
         </div>
+        <!-- /.login-box-body -->
     </div>
-
-    <!-- Jquery Core Js -->
-    <script src="<?php echo SITE_URL?>/lib/skins/iCrewLITE/plugins/jquery/jquery.min.js"></script>
-
-    <!-- Bootstrap Core Js -->
-    <script src="<?php echo SITE_URL?>/lib/skins/iCrewLITE/plugins/bootstrap/js/bootstrap.js"></script>
-
-    <!-- Waves Effect Plugin Js -->
-    <script src="<?php echo SITE_URL?>/lib/skins/iCrewLITE/plugins/node-waves/waves.js"></script>
-
-    <!-- Validation Plugin Js -->
-    <script src="<?php echo SITE_URL?>/lib/skins/iCrewLITE/plugins/jquery-validation/jquery.validate.js"></script>
-
-    <!-- Custom Js -->
-    <script src="<?php echo SITE_URL?>/lib/skins/iCrewLITE/js/admin.js"></script>
-    <script src="<?php echo SITE_URL?>/lib/skins/iCrewLITE/js/pages/examples/sign-in.js"></script>
+    <!-- /.login-box -->
+    
+    <!-- iCheck -->
+    <script src="<?php echo SITE_URL?>/lib/skins/crewcenter/plugins/iCheck/icheck.min.js"></script>
+    <script>
+      $(function () {
+        $('input').iCheck({
+          checkboxClass: 'icheckbox_square-blue',
+          radioClass: 'iradio_square-blue',
+          increaseArea: '20%' // optional
+        });
+      });
+    </script>
+</body>

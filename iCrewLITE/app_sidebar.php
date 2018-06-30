@@ -88,6 +88,11 @@
                                     <span>Staff Team</span>
                                 </a>
                             </li>
+                            <li>
+                                <a href="<?php echo SITE_URL?>/index.php/Privacy">
+                                    <span>Privacy Policy</span>
+                                </a>
+                            </li>
                         </ul>
                     </li>
                     <li>
@@ -103,9 +108,8 @@
             <!-- Footer -->
             <div class="legal">
                 <div class="copyright">
-                  <!-- According to the policy of phpVMS you should NOT remeove this -->
                     <?php echo SITE_NAME?> &copy; <?php echo date("Y"); ?><br>
-                    powered by <a href="www.phpvms.net">phpVMS</a><br>
+                   <small><?php echo CREWCENTER_TITLE?> by Leonard Selvaraja <br> powered by <a href="https://www.phpvms.net">phpVMS</a></small><br>
                 </div>
                 <div class="version">
                     <b>Version: </b> <?php echo PHPVMS_VERSION; ?>

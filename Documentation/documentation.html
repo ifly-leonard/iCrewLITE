@@ -110,12 +110,31 @@
 							or some features might not work as intended.
 							<br><br>
 							<center>
-								<img src="http://www.iflyva.in/icrewlite/Documentation/assets/img/DemoCrew.png" width="auto;" height="250"/><br>
+								<img src="assets/img/crewcenter.jpg" width="auto;" height="250"/><br>
 								iCrew LITE Crew Center on Jet Airways Virtual's Website
 							</center>
 
 							<strong>Warning</strong><br>
-							This CrewCenter was built on phpVMS by simpilot (v5.5.2), I cannot gaurentee that this will work with other versions of phpVMS as intended
+							This CrewCenter was built on phpVMS by simpilot (v5.5.2), I cannot gaurentee that this will work with other versions of phpVMS as intended.<br><br>
+							<strong>Changelog</strong><br>
+							<ol>
+								v2.1
+								<li>Added Privacy Module</li>
+								<li>Edited Staff Module, changed way of functioning. No more SQL work needed.</li>
+								<li>Fixed bug on registration page - Showing only HTML</li>
+								<li>Fixed bug on registration page - reCaptcha</li>
+								<li>Styled PIREP Comments, PIREP View, and PIREP Edit pages aditionally.</li>
+								<li>Added conditional statements for Charts fetch.</li>
+								<li>Fixed StatsData::TotalHours(); => NaN error. </li>
+								<li>Removed the install.php due to unsolved errors</li>
+								<li>Updated iCrew LITE Usage policy (IMPORTANT! Read at end of this page) </li>
+							</ol>
+							<ol>
+								v2.0
+								<li>Module released</li>
+								<li>Included install.php for dummies </li>
+								<li>Styled the documentation page</li>
+							</ol>
 						</div>
 					</div>
 
@@ -126,7 +145,9 @@
 
 						<h3 id="sec21" class="section-title">Overview</h3>
 						<div class="section-content">
-							<p>[UPDATED ON 19.02.2018] Installing iCrew LITE into your website is really simple. All you need to do is, to make sure you follow the check list and do exactly what it says ;)</p>
+							<p>
+								Things to keep in mind : It won't work unless you follow this documentation fully, i.e to configure it. So before you head to check out how the skin looks on your VA, make sure you've done all the required work. For your sake and mine :)
+							</p>
 						</div>
 
 						<h3 id="chekclist" class="section-title">Installation Checklist</h3>
@@ -145,10 +166,9 @@
 									<li>Unzip the iCrew LITE package and paste it into public_html/(subdomain_folder_name)/lib/skins</li>
 									<li>Go to your admin panel and change the skin to iCrew LITE</li>
 							</ol>
-							<a href="./install.php" class="button">Open Installer</a><br><br>
-							<em><p>EXPERIMENTAL : In step 7, Upload the phpVMS installer to your main domain and when the installer asks you to verify the domain (SITE_URL), enter your subdomain. (or) Continue using the normal method and once you're done with the installation, replace the common, modules and templates folders from your previous domain. </p></em>
+							<!-- <a href="./install.php" class="button">Open Installer</a><br><br> -->
 							<p>
-									Your Crew center is successfully installed, but not yet configured. So you are likely it would either keep loading with the preloader or show some error. Don't panic, just continue with the configuration.
+									Your Crew center is successfully installed, but not yet configured. So it would either keep loading with the preloader or show some error. Don't panic, just continue with the configuration.
 							</p>
 						</div>
 
@@ -167,8 +187,8 @@
 
 							> Now, in the place of DemoCrew you can put in a suitable name for your VA, like BluCrew, iCrew, DeltaCrew, RedCrew etc.
 							If nothing is desirable, then use your VA's name itself. <br>
-							> Now, for your the VA Tagline, use your "real world airline's tagline", for example for British Airways, it would be "To fly, To Serve". <br>
-							> In the GMAPS_API, paste your Google maps API Key.
+							> Now, for your the VA Tagline, use your "real world airline's tagline", for example for American Airlines, it would be "GoingForGreat". Keep in mind this will be preceeded with a '#' <br>
+							> In the GMAPS_API, paste your Google maps API Key. If you don't know how to acquire one, click <a href="https://console.developers.google.com/apis/dashboard" target="_blank">here</a>
 						</div>
 
 						<div class="space"></div>
@@ -183,10 +203,11 @@
 									<li> Credits - simpilotgroup </li>
 									<li> Events - simpilotgroup</li>
 									<li> Ranks - iCrewSystems </li>
+									<li> Privacy - iCrewSystems </li>
 								</ol>
 
-								To make your work short and to save time, i'd fully recommend to use the <a href="https://github.com/DavidJClark/phpVMS-Plugins_Manager">Plugin Manager </a> (except Ranks module, everything is included there)<br>
-								You can find the Ranks module along with the downloads. For all these addons, the template files are already included with the Skin, so you pretty much have nothing to do but to install it ;)
+								To make your work short and to save time, I'd fully recommend to use the <a href="https://github.com/DavidJClark/phpVMS-Plugins_Manager">Plugin Manager </a> (except Ranks module, everything is included there)<br>
+								You can find the Ranks & Privacy module along with the downloads, just place them in core > modules and you're done. For all these addons, the template files are already included with the Skin, so you pretty much have nothing to do but to install it ;)
 
 							</p>
 						</div>
@@ -258,15 +279,21 @@
 
 
 					<div id="htw" class="section">
-						<h2 class="section-head">How things work</h2>
+						<h2 class="section-head">How things work <span class="text-danger"> VERY IMPORTANT</h2>
 						<div class="section-content">
-							<p> Well, mostly I've made sure everything is dynamic, which means you don't have to change / monitor anything, but there are few stuff which you need to tweak in order to make sure everything works perfectly.
-								<br> To begin with, the Staff Page needs a little work with the SQL Database, nothing much, you just need to run a command and there after add few entries.
-									<br> Open your phpMyAdmin and run this SQL Command.
-								<pre><code>ALTER TABLE  `phpvms_pilots` ADD  `staff` INT NULL DEFAULT NULL AFTER  `ranklevel` ;</code></pre>
-								So, now you can see you've added a new feild called "staff", if the pilot is staff in your VA, enter "1" else it'll be "0" by default and in the "Admin Comments" add the persons's respective designation.<br><br>
+							<p>
+								[UPDATE] : I have found through the phpVMS Forum post that most of the issues are because the admins forgot to do this part. I repeat, donot skip this part, it's quite important.<br><br>
+								Well, mostly I've made sure everything is dynamic, which means you don't have to change / monitor anything, but there are few stuff which you need to tweak in order to make sure everything works perfectly.
+								<br> To begin with, the Staff Page needs a little configuration to do. It's simple, you just need to understand this over here! The skin is even already exported with the code, so no need to Copy paste too.<br><br>
+									<br>To the guys who are from 'Non Computer Science background', and the guys who donot understand what is an array, An array is a special variable, which can hold more than one value at a time.
+									So we are storing all the staff positions and the name of the respective staff inside "$staff_array". This is called as an Associative Array <br>
+									You will need to edit these lines which are located at <strong>lib > skins > iCrewLITE > staff.php > on line 13</strong>
+									<br><br>Layout : First Part = 'Name of the staff position', Second Part = 'Name of the person'
+									<br><br>
+								<pre><code>$staff_array = array(<br><br>"COO"=>"Gabriel Iglesias", <br>"Flight Operations"=>"D.J Trump"<br><br>);</code></pre>
+									<br><br>
 
-								Next, open <strong>core > common > StatsData.class.php </strong> and after line '556' add the following <br>
+								Next, open <strong>core > common > StatsData.class.php </strong> and after line '556' add the following <br><br>
 								<pre><code>public static function TodayHours() { <br>return self::getTotalForCol(array('table' => 'pireps','column' => '*',<br>'where' => array('DATE(`submitdate`) = CURDATE()'),'func' => 'SUM'));<br> }</code>
 						</pre>
 						<br>
@@ -276,7 +303,7 @@
 						When you want to add a new Focus Airport, simply go the <strong>focusairport</strong> folder in <Strong>lib > skins > iCrewLITE </strong> and change the 'ICAO Code' and the 'Image'. As default, I've added 'OMDB' to be the Focus Airport.<br>
 						Here's a Tip, (this is completely my opinion) use pictures which have tags like '#silhouette, #sunset' of famous monuments of the Airport's City. For example, i came up with this picture when I searched for 'Dubai skyline sunset silhouette'.
 
-						<br>
+						<br><br>
 						<strong><h3>The Ranks Module</h3> </strong>
 						<br>
 							That's pretty simple, you can find the required files at the folder called 'Modules' with this installer. Paste that folder under your core > modules and it's done. Please note that it will NOT work as intended if you donot have pictures which depict your VA's respective rankings.
@@ -294,16 +321,41 @@
 					</div>
 
 					<div id="zzs" class="section">
-						<h2 class="section-head">Congratulations</h2>
+						<h2 class="section-head">Known Issues and how to fix them</h2>
 						<div class="section-content">
 							<p>
-									Congratulations, you've successfully installed iCrew LITE Crew Center to your Virtual Airline. I am not sure, but there might be some little fine tuning work left for you. I am sure you can handle that ;) If you think something is wrong, don't hesitate to trouble me.
+								<ol>
+									<li>Once you logout of the CrewCenter, you see a weird blue page with your VA's news feed. <br><br>
+										FIX : Go to core > modules > Logout > Logout.php and in line 25 you should have "header('Location: '.url('/'));"
+										Change it to the link you want to direc﻿t to, for example
+										<br>
+										To redirect the page to a module within the VA after logging out : "header('Location: '.url('/'));"
+										<br>
+										To redirect the page to a URL outside the VA : "header('Location: https://www.myvahomepage.com');"
+									</li>
 									<br><br>
-									I wish to mention <strong>Nabeel, David (simpilotgroup), Parkho, Vansers, Mark Swan and all the other contributors</strong> for all their hardwork towards the community in providing quality stuff for free. In this project, I'd like to specially thank my mentors Mr.Sooryah and Mr.Dishang for providing me the oppertunity to do this. I also wish to thank Ms. Rashi Trivedi for motivating me to continue this project. Finally, I'd like to thank God for providing the wisdom, knowledge and understanding to complete this project.
+									<li>
+										Recaptcha says invalid, users unable to register. <br><br>
+										FIX : Get your reCaptcha public & private keys and update it at core > codon.config.php. Just do a Ctrl + F and "captcha", paste the keys accordingly.
+									</li>
+								</ol>
 							</p>
 
 
 					</div>
+
+					<h2 class="section-head">Congratulations</h2>
+					<div class="section-content">
+						<p>
+								Congratulations, you've successfully installed iCrew LITE Crew Center to your Virtual Airline. I am not sure, but there might be some little fine tuning work left for you. I am sure you can handle that ;) If you think something is wrong, don't hesitate to trouble me.
+								<br><br>
+								I wish to mention <strong>Nabeel, David (simpilotgroup), Parkho, Vansers, Mark Swan and all the other contributors</strong> for all their hardwork towards the community in providing quality stuff for free. In this project, I'd like to specially thank my mentors Mr.Sooryah and Mr.Dishang for providing me the oppertunity to do this. I also wish to thank Ms. Rashi Trivedi for motivating me to continue this project. Finally, I'd like to thank God for providing the wisdom, knowledge and understanding to complete this project.
+								<br><br>
+								Do you wish for me to add something? Wish for me to add styling to your existing modules? I can do that! Write up an email / open a forum post / DM on the phpVMS Forum
+						</p>
+
+
+				</div>
 
 					<div id="lic" class="section">
 						<h2 class="section-head">Licensing</h2>
@@ -315,6 +367,8 @@
 									<ul>
 										<li>Free to Share — copy and redistribute the material in any medium or format</li>
 										<li>Free to Adapt — remix, transform, and build upon the material</li>
+										<li>Not to remove — "powered by phpVMS" tag</li>
+										<li>Not to remove — "CrewCenter by Leonard" tag</li>
 									</ul>
 									Terms of License
 									<ol>
